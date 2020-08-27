@@ -1,0 +1,12 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+		"compile": "node-sass Starter-file/sass/main.scss Starter-file/dist/css/style.css",
+		"watch": "node-sass Starter-file/sass/main.scss Starter-file/dist/css/style.css --watch"
+	},
+  "author": "",
+  "license": "ISC"
+}
