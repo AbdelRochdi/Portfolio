@@ -7,7 +7,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="../index.php">PerfectCup Admin</a>
+                <a class="navbar-brand" href="../index.php">Portfolio Admin</a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
@@ -121,22 +121,31 @@
                     </li>
                    
                     <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#products"><i class="fa fa-fw fa-arrows-v"></i> Products <i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="products" class="collapse">
+                        <a href="javascript:;" data-toggle="collapse" data-target="#projects"><i class="fa fa-fw fa-arrows-v"></i> Projects <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="projects" class="collapse">
                             <li>
-                                <a href="view_products.php">View Products</a>
+                                <a href="view_projects.php">View Projects</a>
                             </li>
                             <li>
-                                <a href="add_product.php">Add Products</a>
+                                <a href="add_projects.php">Add Projects</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#experiences"><i class="fa fa-fw fa-arrows-v"></i> Experiences <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="experiences" class="collapse">
+                            <li>
+                                <a href="view_experiences.php">View experiences</a>
+                            </li>
+                            <li>
+                                <a href="add_experiences.php">Add experiences</a>
                             </li>
                         </ul>
                     </li>
                     <li>
                         <a href="users.php"><i class="fa fa-fw fa-bar-chart-o"></i> Users</a>
                     </li>
-                    <li>
-                        <a href="cart.php"><i class="fa fa-fw fa-table"></i> Cart</a>
-                    </li>
+                    
                     
                    
                 </ul>

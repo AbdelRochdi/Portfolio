@@ -1,7 +1,7 @@
 
 <?php 
 
-    $connection = mysqli_connect('Localhost','root','','perfectcup');
+    $connection = mysqli_connect('Localhost','root','','portfolio');
 
 ?>
 
