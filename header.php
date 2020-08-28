@@ -1,3 +1,5 @@
+<?php require_once 'db.php' ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +16,7 @@
 <body>
 
     <header>
-        <div class="menu-toggler">
+        <div class="menu-toggler" id="menu">
             <div class="bar half start"></div>
             <div class="bar"></div>
             <div class="bar half end"></div>
@@ -28,8 +30,20 @@
                 <li><a href="login.php" class="nav-link">Login</a></li>
             </ul>
         </nav>
-        <div class="landing-text">
+        <div class="landing-text" id="landing">
                 <h1>Abdelghafour Rochdi</h1>
                 <h6>Full Stack Web Developer</h6>
+            <div class="techs">
+                <ul class="wrap">
+                    <li class="nav-link">HTML5</li>
+                    <li class="nav-link">CSS3</li>
+                    <li class="nav-link">Sass</li>
+                    <li class="nav-link">JavaScript</li>
+                    <li class="nav-link">MySQL</li>
+                    <li class="nav-link">PHP</li>
+                    <li class="nav-link">ReactJs</li>
+                    <li class="nav-link">ExpressJs</li>
+                </ul>
             </div>
+        </div>
     </header>

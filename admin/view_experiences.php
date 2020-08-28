@@ -46,12 +46,9 @@
                                 $experience_start = $row['start'];
                                 $experience_finish = $row['finish'];
 
-                                
-
                                 if ($experience_finish === "0000-00-00") {
                                     $experience_finish = 'Present';
                                 }
-
 
                                 echo "<tr>";
                                 echo "<td>$experience_id</td>";

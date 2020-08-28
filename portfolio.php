@@ -13,25 +13,25 @@
                     </div>
                     <h1>Web Design</h1>
                     <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio, at debitis cupiditate vitae sunt accusamus dolor laborum ex. Nam error qui provident consequuntur vel perferendis? Velit incidunt sequi possimus tempora.
+                        Professional UI/UX design.
                     </p>
                 </div>
                 <div class="skill" data-aos='fade-in' data-aos-dealy="600">
                     <div class="icon-container">
                         <i class="fas fa-code"></i>
                     </div>
-                    <h1>Web Design</h1>
+                    <h1>Front-End</h1>
                     <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio, at debitis cupiditate vitae sunt accusamus dolor laborum ex. Nam error qui provident consequuntur vel perferendis? Velit incidunt sequi possimus tempora.
+                        Professional and good looking Front-End with ReactJs. 
                     </p>
                 </div>
                 <div class="skill" data-aos='fade-in' data-aos-dealy="900">
                     <div class="icon-container">
                         <i class="fas fa-chart-bar"></i>
                     </div>
-                    <h1>Web Design</h1>
+                    <h1>Back-End</h1>
                     <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio, at debitis cupiditate vitae sunt accusamus dolor laborum ex. Nam error qui provident consequuntur vel perferendis? Velit incidunt sequi possimus tempora.
+                        Professional, Fast and Optimal Back-end with PHP or ExpressJs.
                     </p>
                 </div>
             </div>
@@ -44,19 +44,41 @@
                 <h1>Portfolio</h1>
                 <h6>View some of my recent work</h6>
             </div>
+            <?php 
+                            $query = "SELECT * FROM projects";
+                            $project_query = mysqli_query($connection,$query);
+
+                            if (!$project_query) {
+                                die("QUERY FAILED". mysqli_error($connection));
+                            }
+
+                            while ($row = mysqli_fetch_array($project_query)) {
+                                $category = $row['category'];
+                                $title = $row['title'];
+                                $image = $row['image'];
+                                $description = $row['description'];
+                                $link = $row['link'];
+
+                                ?>
+                        
             <div class="portfolio-item">
                 <div class="potfolio-img has-margin-right" data-aos='fade-right' data-aos-dealy="300">
-                    <img src="images/portitem1.jpeg" alt="">
+                    <img src="images/<?php echo $image ?>" alt="">
                 </div>
                 <div class="portfolio-description" data-aos='fade-left' data-aos-dealy="600">
-                    <h6>Web developement</h6>
-                    <h1>Blog Website</h1>
+                    <h6><?php echo $category ?></h6>
+                    <h1><?php echo $title ?></h1>
                     <p>
-                       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla corrupti dignissimos explicabo aliquid tenetur obcaecati, autem reiciendis adipisci eum! Deleniti quae dolor facilis laudantium modi magnam officia unde dolore culpa! 
+                    <?php echo $description ?>
                     </p>
-                    <a href="" class="cta">View Details</a>
+                    <a href="<?php echo $link ?>" class="cta">View Details</a>
                 </div>
             </div>
+	
+                        <?php
+                            }
+                        ?>
+            
             <div class="portfolio-item">
                 <div class="portfolio-description has-margin-right" data-aos='fade-right' data-aos-dealy="900">
                     <h6>Web developement</h6>

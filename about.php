@@ -1,32 +1,43 @@
 <?php require_once 'header.php' ?>
+<?php 
+
+$query = "SELECT * FROM users WHERE id= 0";
+$users_query = mysqli_query($connection,$query);
+
+if (!$users_query) {
+    die("QUERY FAILED". mysqli_error($connection));
+}
+
+$row = mysqli_fetch_array($users_query);
+    $user_image = $row['image'];
+    $user_about = $row['about'];
+?>
 
 <section class="about">
         <div class="container">
             <div class="profile-img" data-aos='fade-right' data-aos-dealy="300" >
-                <img src="images/profile.jpeg" alt="profile image">
+                <img src="images/<?php echo $user_image ?>" alt="profile image">
             </div>
             <div class="about-details" data-aos='fade-left' data-aos-dealy="600">
                 <div class="about-heading">
                     <h1>About </h1>
                     <h6>Myself</h6>
                 </div>
-                <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur officia accusantium error ducimus sunt deleniti quas soluta illum. Placeat vero sapiente dolorem illo exercitationem eaque corrupti illum ducimus reprehenderit quae!ta illum. Placeat vero sapiente dolorem illo exercitationem eaque corrupti illum ducimus reprehenderit quae!
-                </p>
+                <p><?php echo $user_about ?></p>
                 <div class="social-media">
                     <ul class="nav-list">
                         <li>
-                            <a href="" class="icon-link">
+                            <a href="https://www.facebook.com/abdelghafour.rochdi" target="blank" class="icon-link">
                                 <i class="fa fa-facebook-square"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="" class="icon-link">
+                            <a href="https://github.com/AbdelRochdi" target="blank"  class="icon-link">
                                 <i class="fa fa-github-square"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="" class="icon-link">
+                            <a href="https://www.linkedin.com/in/abdelghafour-rochdi-110932152/"  target="blank" class="icon-link">
                                 <i class="fa fa-linkedin-square"></i>
                             </a>
                         </li>
@@ -45,24 +56,34 @@
             </div>
             <div class="timeline" data-aos='fade-down' data-aos-dealy="300">
                 <ul>
-                    <li class="date" data-date="2011 - Present">
-                        <h1>Google</h1>
+                <?php 
+                            $query = "SELECT * FROM experience";
+                            $experience_query = mysqli_query($connection,$query);
+
+                            if (!$experience_query) {
+                                die("QUERY FAILED". mysqli_error($connection));
+                            }
+
+                            while ($row = mysqli_fetch_array($experience_query)) {
+                                $title = $row['title'];
+                                $description = $row['description'];
+                                $start = $row['start'];
+                                $finish = $row['finish'];
+
+                                ?>
+                        <li class="date" data-date="<?php echo $start ?> / <?php echo $finish ?>">
+                        <h1><?php echo $title ?></h1>
                         <p>
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium ad vitae odio voluptate deleniti veritatis fuga hic modi? Voluptatibus, reprehenderit architecto atque saepe ratione eos veniam doloribus quaerat eveniet libero?
+                        <?php echo $description ?>
                         </p>
                     </li>
-                    <li class="date" data-date="2011 - Present">
-                        <h1>Google</h1>
-                        <p>
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium ad vitae odio voluptate deleniti veritatis fuga hic modi? Voluptatibus, reprehenderit architecto atque saepe ratione eos veniam doloribus quaerat eveniet libero?
-                        </p>
-                    </li>
-                    <li class="date" data-date="2011 - Present">
-                        <h1>Google</h1>
-                        <p>
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium ad vitae odio voluptate deleniti veritatis fuga hic modi? Voluptatibus, reprehenderit architecto atque saepe ratione eos veniam doloribus quaerat eveniet libero?
-                        </p>
-                    </li>
+                
+	
+                        <?php
+                            }
+                        ?>
+                    
+                   
                 </ul>
             </div>
         </div>

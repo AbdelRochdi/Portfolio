@@ -1,5 +1,11 @@
 <?php ob_start();?>
-<?php include "db.php" ?>
+<?php include "db.php";
+    session_start();
+    if (isset($_SESSION['id'])) {
+    
+?>
+
+
 
 
 <!DOCTYPE html>
@@ -40,3 +46,12 @@
         <?php include "admin_nav.php" ?>
 
         <div id="page-wrapper">
+
+        <?php
+
+}
+else {
+    header("location:../login.php");
+}
+
+?>

@@ -56,18 +56,11 @@ if (isset($_POST['edit_experience'])) {
                 <!-- /.row -->
              <form action="edit_experience.php?edit=<?php echo $e_id ?>" method="post" enctype="multipart/form-data">    
      
-             
 
                     <div class="form-group">
                         <label for="title">experience Title</label>
                         <input type="text" value = "<?php echo $e_title ?>" class="form-control" name="experience_title">
                     </div>
-
-                
-      
-      
-      
-                    
 
                     
                     <div class="form-group">
