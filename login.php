@@ -55,7 +55,7 @@ if (isset($_POST['login'])) {
             <div class="section-heading">
                 <h1>Login</h1>
                 <h6>Welcome To Your Portfolio</h6>
-                <h6><?php echo $message ?></h6>
+                <?php echo $message ?>
             </div>
             <form action="login.php" method="post" data-aos='fade-up' data-aos-dealy="300">
                
